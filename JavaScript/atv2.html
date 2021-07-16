@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>JavaScript</title>
+            
+            <script>
+                  var nome = prompt("Digite seu nome: ")
+                  var altura = parseFloat(prompt("Altura em cm: "))
+                  var peso = parseFloat(prompt("O peso em KG: "))
+
+                  altura = altura / 100 
+                  //Transformar em metros
+
+                  var MassaCorp = (peso / (altura * altura))
+                  
+                  var classificacao = null
+
+                  if (MassaCorp < 16){
+                        classificacao = "Baixo peso muito grave"
+
+                  } else if (MassaCorp >= 16 && MassaCorp <= 16.99){
+                        classificacao = "Baixo peso grave"
+                        
+                  } else if (MassaCorp >= 17 && MassaCorp <= 18.49){
+                        classificacao = "Baixo peso"
+                        
+                  } else if (MassaCorp >= 18.5 && MassaCorp <= 24.99){
+                        classificacao = "Peso normal"
+                        
+                  } else if (MassaCorp >= 25 && MassaCorp <= 29.99){
+                        classificacao = "Sobrepeso"
+                        
+                  } else if (MassaCorp >= 30 && MassaCorp <= 34.99){
+                        classificacao = "Obesidade grau I"
+                        
+                  } else if (MassaCorp >= 35 && MassaCorp <= 39.99){
+                        classificacao = "Obesidade grau II"
+                        
+                  } else {
+                        classificacao = "Obesidade grau III"
+                        }
+
+                  document.write(nome + " possui índice de massa corporal igual a " + MassaCorp + ", sendo classificado como: " + classificacao)
+
+            </script>
+
+      </head>
+
+      <body>      
+      </body>
+</html>
