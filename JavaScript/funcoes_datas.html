@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>JavaScript</title>
+            
+            <script>
+                
+              var data = new Date()
+              /* Tem que instanciar o objeto */
+              
+              document.write(data.getDate() + " / " + 
+                            (data.getMonth() + 1) + " / " +
+                            (data.getFullYear()))
+
+            // adicionando e removendo dias 
+            document.write("<br /> <br /><hr />")
+
+            document.write(data.toString())
+            data.setDate(data.getDate() + 1)
+
+            document.write("<hr />")
+
+            document.write(data.toString())
+
+            // adicionando e removendo meses 
+            document.write("<br /><br /><hr />")
+
+            document.write(data.toString())
+            data.setMonth(data.getMonth() + 1)
+
+            document.write("<hr />")
+
+            document.write(data.toString())
+
+            // adicionando e removendo anos 
+            document.write("<br /><br /><hr />")
+
+            document.write(data.toString())
+            data.setFullYear(data.getFullYear() + 1)
+
+            document.write("<hr />")
+
+            document.write(data.toString())
+
+
+            document.write("<br /><br /><hr />")
+            document.write("Calculo entre datas")
+            document.write("<hr />")
+
+            var data1 = new Date(2021, 0, 16)
+            // ano, mês (0:11), dia
+
+            var data2 = new Date(2021, 1, 23)
+
+            document.write(data1.toString())
+            document.write("<hr />")
+            document.write(data2.toString())
+            document.write("<hr />")
+
+            //Converter datas para algo que possa ser calculado
+
+            document.write(data1.getTime())
+            document.write("<hr />")
+            document.write(data2.getTime())
+            document.write("<hr />")
+            //Encontrar a qtde de milissegundos
+
+            document.write(data2.getTime() - data1.getTime())
+            document.write("<hr />")
+            
+            //converter para dia. 1 dia tem 86400000 milissegundos
+            
+            var milissegundos = (data2.getTime() - data1.getTime())
+            var dias = Math.ceil(milissegundos / 86400000)
+            document.write("temos " + dias + " entre as datas")
+
+            </script>
+
+      </head>
+
+      <body>      
+      </body>
+</html>
