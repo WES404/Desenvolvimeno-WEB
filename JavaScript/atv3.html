@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>JavaScript</title>
+            
+            <script>
+
+                var numero1 = parseFloat(prompt("Ensira um número: "))
+
+                var operacao = prompt("Qual é a operação? ")
+
+                var numero2 = parseFloat(prompt("Ensira o segundo número: "))
+
+                function Operacao(x, y, operacao) {
+
+                    if(operacao == "soma") {
+                        var resultado = x + y
+
+                    } else {
+                        var resultado = x - y
+                    }
+
+                    return resultado
+                }
+
+                document.write("O resultado é: " + Operacao(numero1, numero2, operacao))
+            </script>
+
+      </head>
+
+      <body>      
+      </body>
+</html>
