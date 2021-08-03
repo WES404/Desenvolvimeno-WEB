@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>JavaScript</title>
+            
+            <script>
+                function Focus() {
+                    document.getElementById("ccc").style.background = 'yellow'
+                }
+
+                function valorCarater() {
+                    var valor1 = document.getElementById("ccc").value.length
+
+                    if (valor1 < 3) {
+                        document.getElementById("ccc").style.background = 'red'
+                    }
+                    else {
+                        document.getElementById("ccc").style.background = 'green'
+                    }
+                }
+                
+            </script>
+
+      </head>
+
+      <body>
+          <input id="ccc" type="text" onfocus="Focus()" onblur="valorCarater()"/>
+
+      </body>
+</html>
