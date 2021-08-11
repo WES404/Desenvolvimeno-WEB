@@ -1,0 +1,33 @@
+<html>
+	<head>
+        <meta charset="utf-8"/>
+		<title>Calculadora</title>
+
+        <script>
+            var lista0 = ["Banana", "Maçã", "Uva", "Cenoura"]
+            var lista1 = [1, 11, 120, 2, 30, 0]
+
+            console.log(lista0)
+
+            // Alfanumerica
+
+            console.log(lista0.sort())
+
+            // Numericos
+
+            function ordena_Numeros(a, b) {
+                return a - b
+                // < 0 = a menor que b
+                // > 0 = a maior que b
+            }
+
+            console.log(lista1.sort(ordena_Numeros()))
+
+        </script>
+    
+	</head>
+
+  <body> 
+  </body>	
+
+</html>

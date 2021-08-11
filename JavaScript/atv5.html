@@ -1,0 +1,44 @@
+<html>
+	<head>
+        <meta charset="utf-8"/>
+		<title>Atividade 5</title>
+
+        <script>
+            var objetos = ['Cadeira', 'Impressora', 'Garfo']
+
+            function Adiciona() {
+                var valor = document.getElementById("input").value
+
+                if (valor == "") {
+                    // Se não tiver valor pede-se que adicione
+                    alert("Informe um valor válido")
+                }
+                else {
+                    if (objetos.indexOf(valor) === -1) {
+                        // Se não tem adiciona, imprime no console e limpa no input
+                        objetos.push(valor)
+                        console.log(objetos)
+                        document.getElementById("input").value = ""
+                    }
+                    else {
+                        // Senão emite alerta
+                        alert("Objeto já foi adicionado")
+                    }
+                }
+            }
+
+            function Ordenar() {
+                objetos.sort()
+                console.log(objetos)
+            }
+        </script>
+    
+	</head>
+
+  <body> 
+      <input id="input" type="text"/>
+      <button type="button" onclick="Adiciona()">Adicionar</button>
+      <button type="button" onclick="Ordenar()">Ordenar</button>
+  </body>	
+
+</html>
