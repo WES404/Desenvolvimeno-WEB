@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+          
+        <script>
+
+            // Netflix
+
+            var video = []
+            video[1] = []
+            video[1]['nome'] = 'Fullmetal Alchemist'
+            video[1]['categoria'] = 'Anime'
+
+            function getVideo(video) {
+
+                try {
+
+                    console.log(video[0]['nome'])
+
+                } catch(erro) {
+
+                    tratarError(erro)
+                    console.log('Trataremos o error')
+                    throw new Error('Houve um error')
+
+                } finally {
+
+                    console.log('Sempre passa por aqui!')
+
+                }
+
+
+            }
+
+            function tratarError(e) {
+                console.log(e)
+            }
+
+            getVideo(video)
+
+        </script>
+        
+    </head>
+    <body>
+
+    </body>
+</html>
