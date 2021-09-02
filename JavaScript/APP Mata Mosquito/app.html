@@ -3,6 +3,11 @@
 <head>
 	<title></title>
 
+	<meta charset="utf-8"/>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"/>
+
 	<link rel="stylesheet" href="estilo.css"/>
 	<script src="jogo.js"></script>
 
@@ -17,14 +22,18 @@
 			<img id="v3" src="imagens/coracao_cheio.png"/>
 		</div>
 
-		<div class="cronometro">Tempo restante: ?</div>
+		<div class="cronometro">
+			Tempo restante: <span id="cronometro">
+		</div>
+
 	</div>
 
 	<script>
+		document.getElementById("cronometro").innerHTML = tempo
 
-		setInterval(function() {
+		var Criamosquito = setInterval(function() {
 			posicaoRandomica()
-		}, 1500)
+		}, criarMosquitoTempo)
 
 	</script>
 	
