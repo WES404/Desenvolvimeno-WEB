@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação ao Objeto</title>
+
+        <script>
+
+            //um software de marcenaria
+            //cadeira e sofa
+
+            //procedural
+
+            //cadeira
+            
+
+            let cadeiras = array()
+
+            cadeiras[0] = array() 
+            cadeiras[0]['qtde_pernas'] = 4 
+            cadeiras[0]['giratoria'] = false
+            cadeiras[0]['cor'] = "azul" 
+            
+            cadeiras[1] = array() 
+            cadeiras[1]['qtde_pernas']= 1
+            cadeiras[1]['giratoria']  = true
+            cadeiras[1]['cor'] = "cinza"  
+            
+            function girar_cadeira(indice) {
+                if(cadeira[indice]["giratoria"] == true) {
+                    console.log("girou")
+                } else {
+                    console.log("não girou")
+                }
+            }
+
+            function adicionar_cadeira (qted_pernas, giratoria, cor) {
+                let cadeira = Array()
+
+                cadeiras['qtde_pernas'] = qtde_pernas
+                cadeiras['giratoria']  = giratoria
+                cadeiras['cor'] = cor
+
+                cadeiras.push(cadeira)
+            }
+
+            adicionar_cadeira(3, false, "verde")
+
+            console.log(cadeiras)
+
+            girar_cadeira()
+
+
+            //Paradigma OO
+
+            class Cadeira {
+
+                constructor (qtde_pernas, giratoria, cor) {
+
+                    this.qtde_pernas = qted_pernas
+                    this.giratoria = giratoria
+                    this.cor = cor
+                }
+            
+
+                girarCadeira () {
+                    if (this.giratoria == true) {
+                        console.log("girou")
+                    } else {
+                        console.log("cadeir não é giratória")
+                    }
+                }
+            }
+
+            let cadeira = new Cadeira(4, false, "azul")
+            cadeira.girarCadeira()
+
+            let cadeira2 = new Cadeira(1, true, "cinza")
+            cadeira.girarCadeira()
+           
+        </script>
+    </head>
+</html>

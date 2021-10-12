@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação ao Objeto</title>
+
+        <script>
+
+           //modelo de objeto
+
+           class ContaBancaria {
+
+               //agencia
+               //saldo
+               //limite
+               //NumeroConta
+
+               constructor () {
+
+                    this.agencia = 1075
+                    this.NumeroConta = 83125355
+                    this.saldo = 50
+                    this.limite = 1050 
+
+               }
+
+               depositar (valorDeposito){
+
+                   this.saldo += valorDeposito
+
+               }
+
+               sacar (valorSaque){
+
+                    this.saldo -= valorSaque
+
+               }
+
+               ConsultarSaldo () {
+
+                    return this.saldo
+
+               }
+
+           }
+
+           let x = new ContaBancaria()
+           let y = new ContaBancaria()
+
+           console.log(x.ConsultarSaldo())
+           x.depositar(800)
+           console.log(x.ConsultarSaldo())
+           x.sacar(175)
+           console.log(x.ConsultarSaldo())
+
+
+        </script>
+    </head>
+</html>
