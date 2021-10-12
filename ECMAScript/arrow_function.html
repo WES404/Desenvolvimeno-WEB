@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+
+        <script>
+            
+            let quadrado = function(x = 5) {
+                return x * x
+            }
+
+            let quadrado = x =>  x * x //return implicito
+
+            document.write(quadrado(3))
+
+            /*
+            let ParouImpar = numero => {
+                if (numero % 2 == 0) {
+                    return "par"
+                } else {
+                    return "impar"
+                }
+            } */
+
+            let ParouImpar = numero => numero % 2 == 0 ? "par" : "impar"
+
+            document.write(ParouImpar(3))
+
+        </script>
+    </head>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+
+        <script>
+            // 3 escopos: global, função e bloco
+
+            var serie = "Friends" //Global
+
+            function x(){
+
+                var serie = "Game of Thrones"
+
+                console.log("Função: ", serie)
+
+                if (true){
+                    console.log("Bloco dentro da função: ", serie)
+                }
+            }
+
+            x()
+
+            if (true) {
+                console.log(serie)
+            }
+
+        </script>
+    </head>
+</html>
