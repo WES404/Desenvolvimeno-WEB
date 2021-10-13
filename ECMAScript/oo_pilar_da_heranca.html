@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação ao Objeto</title>
+
+        <script>
+
+            class Animal {
+
+                constructor() {
+                    
+                    this.cor = ""
+                    this.tamanho = null
+
+                }
+
+                dormir() {
+                    console.log("Dormir")
+                }
+            }
+            
+            class Cachorro extends Animal{
+                
+                constructor() {
+                    super()
+                    this.orelha = "Grande e caida"
+
+            }
+
+            correr() {
+                console.log("Correr")
+            }
+
+            
+
+            rosnar() {
+                console.log("Rosnar")
+            }
+
+           }
+           
+           class Passaro extends Animal{
+
+               constructor() {
+                   super()
+                   this.orelha = "Curto"
+                }
+
+                voar() {
+                    console.log("Voar")
+                }
+
+            }
+
+            class Papagaio extends Passaro{
+
+                constructor() {
+                    super()
+                    this.bico = "Médio"
+                    this.fala = True
+                }
+
+                falar() {
+                    console.log("Falar")
+                }
+            }
+           
+           let cachorro = new Cachorro()
+           let passaro = new Passaro()
+           let papagaio = new Papagaio()
+
+           cachorro.dormir()
+           papagaio.falar()
+           
+        </script>
+    </head>
+</html>
