@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação ao Objeto</title>
+
+        <script>
+
+            let nome = "Jorge"
+            let idade = 29
+            let sexo = "Masculino"
+            let profissao = 'Programador'
+
+            let objeto = {
+                nome: nome,
+                sexo: sexo,
+                idade: idade,
+                profissao: profissao,
+                exibirResumo: function() {
+                    console.log(`${this.sexo}, ${this.idade}, ${this.profissao}`)
+                }
+            }
+
+            console.log(objeto)
+            objeto.exibirResumo()
+
+            let objeto2 = {
+                nome, // nome = nome da varialve / valor = valor da variavel
+                sexo,
+                idade,
+                profissao,
+                exibirResumo() {
+                    console.log(`${this.sexo}, ${this.idade}, ${this.profissao}`)
+                }
+            }
+
+            console.log(objeto2)
+            objeto2.exibirResumo()
+
+        </script>
+    </head>
+</html>

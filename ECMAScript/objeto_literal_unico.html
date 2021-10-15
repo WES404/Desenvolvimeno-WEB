@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação ao Objeto</title>
+
+        <script>
+
+            let assinatura = {
+                idCliente: 100,
+                descricao: "Acesso a internet",
+                status() {
+                    console.log("Ativo")
+                }
+            }
+
+            console.log(assinatura.descricao)
+
+            let y = assinatura
+
+            console.log(y.descricao)
+
+            y.descricao = "Internet + tv + Telefone"
+
+            console.log(y.descricao)
+            console.log(assinatura.descricao)
+            // Objetos literais são únicos em toda a função
+
+        </script>
+    </head>
+</html>
