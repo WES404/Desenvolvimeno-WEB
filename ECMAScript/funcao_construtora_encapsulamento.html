@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação ao Objeto</title>
+
+        <script>
+
+            let Carro = function() {
+
+                this.cor = "Amarelo"
+                this.modelo = "Chevette"
+                this.velocidadeAtual = 0
+                this.velocidadeMaxima = 70
+
+                this.acelerar = function() {
+
+                    let velocidade = this.getVelocidadeAtual() += 50
+                    
+                    if(velocidade > this.velocidadeMaxima) {
+                        velocidade = this.velocidadeMaxima
+                    }
+
+                    this.setVelocidadeAtual(velocidade)
+                }
+
+                this.getVelocidadeAtual = function() {
+                    return this.velocidadeAtual
+                }
+
+                this.setVelocidadeAtual = function(velocidadeAtual) {
+                    return this.velocidadeAtual = velocidadeAtual
+                }
+            }
+
+            let carro = new Carro()
+            console.log(carro.velocidadeAtual)
+            carro.acelerar()
+            console.log(carro.velocidadeAtual)
+            carro.acelerar()
+            console.log(carro.velocidadeAtual)
+            carro.acelerar()
+            console.log(carro.velocidadeAtual)
+            carro.acelerar()
+            console.log(carro.velocidadeAtual)
+            carro.acelerar()
+
+
+            let Carro2 = function() {
+                
+                this.cor = "Amarelo"
+                this.modelo = "Chevette"
+                this.velocidadeAtual = 0
+
+                var velocidadeMaxima = 100
+                var quilometrosRodados = 0
+
+                this.acelerar = function() {
+
+                    let velocidade = this.getVelocidadeAtual() += 50
+                    
+                    if(velocidade > this.velocidadeMaxima) {
+                        velocidade = this.velocidadeMaxima
+                    }
+                    
+                    this.setVelocidadeAtual(velocidade)
+
+                    setQuilometroRodado(0.07)
+                    console.log(quilometrosRodados)
+                }
+
+                this.getVelocidadeAtual = function() {
+                    return this.velocidadeAtual
+                }
+
+                this.setVelocidadeAtual = function(velocidadeAtual) {
+                    return this.velocidadeAtual = velocidadeAtual
+                }
+
+                var setQuilometroRodado = function(q) {
+                    quilometrosRodados += q
+                }
+            }
+
+            let carro2 = new Carro2()
+            console.log(carro2.velocidadeAtual)
+            carro2.acelerar()
+            console.log(carro2.velocidadeAtual)
+            carro2.acelerar()
+            console.log(carro2.velocidadeAtual)
+            carro2.acelerar()
+            console.log(carro2.velocidadeAtual)
+            carro2.acelerar()
+            console.log(carro2.velocidadeAtual)
+            carro2.acelerar()
+
+        </script>
+    </head>
+</html>
