@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação ao Objeto</title>
+
+        <script>
+
+            //Rest  
+            
+            function soma(...param) {
+
+                let resultado = 0
+
+                console.log(param)
+
+                param.forEach(x => resultado += x)
+
+                return resultado
+            }
+
+            console.log(soma(3, 8, 4, 5, 7))
+
+            function multiplicacao(m, ...p) {
+
+                let resultado  = 0
+
+                p.forEach(v => resultado += m * v)
+
+                console.log(m)
+                console.log(p)
+
+                return resultado
+            }
+
+            multiplicacao(5, 7, 11, 12, 3, 55)
+            
+        </script>
+    </head>
+</html>

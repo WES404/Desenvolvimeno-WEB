@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação ao Objeto</title>
+
+        <script>
+
+            let Bicicleta1 = {
+
+                cor: "Branca",
+                marcha: "única",
+                aro: 12,
+
+                pedalar() { console.log("Pedalando 1")
+                }
+            }
+
+            console.log(Bicicleta1)
+
+            let BicicletaFactory = function(cor, marcha, aro) {
+                return {
+                    cor,
+                    marcha,
+                    aro,
+
+                    pedalar() { console.log("Pedalando 2") }
+                }
+            }
+
+            let Bicicleta2 = BicicletaFactory("vermelho", "12", 26)
+            Bicicleta2.pedalar
+
+            let Bicicleta3 = BicicletaFactory("preto", "25", 45)
+            Bicicleta3.pedalar
+
+        </script>
+    </head>
+</html>

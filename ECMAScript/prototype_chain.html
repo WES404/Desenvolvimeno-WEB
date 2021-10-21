@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação ao Objeto</title>
+
+        <script>
+
+            Object.prototype.attr50 = "aaaaa"
+             
+            let animal = { attr1 : "a" }
+
+            let vertebrado = { 
+                __proto__: animal,
+                attr2: "b" 
+            }
+
+            let ave = {
+                __proto__: verbrado,
+                 attr3: "c" 
+            }
+
+            console.log(ave.attr1, ave.attr2, ave.attr3, ave.attr50)
+
+        </script>
+    </head>
+</html>
