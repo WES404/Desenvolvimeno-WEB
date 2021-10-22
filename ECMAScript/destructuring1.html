@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação ao Objeto</title>
+
+        <script>
+
+            // Destructuring
+
+            let fruta = ["Anana", "uva", "laranja", "Mamão"]
+
+            let [a, b, , c] = frutas
+
+            console.log(a, b, c)
+
+            //valores padroes
+            let [a, b, c, d, e = "Maçã"] = frutas
+
+            console.log(a, b, c, d, e)
+
+            let relacao = [["Anana", "uva", "laranja", "Mamão"], ["Maria", "João", "Pedro", "Ana"]]
+            
+            let [ , [, n2 ] ] = relacao
+
+            console.log(n2)
+        </script>
+    </head>
+</html>

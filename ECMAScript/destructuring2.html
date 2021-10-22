@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação ao Objeto</title>
+
+        <script>
+
+            let produto = {
+
+                descricao: "Notebook",
+                preco: 1800,
+                detalhes: {
+                    fabricante: "ABC",
+                    modelo: "xyz"
+                }
+            }
+
+            let { descricao, preco } = produto
+
+            let { descricao: d, preco: p = 1000 } = produto
+
+            let {detalhes: {fabricante: fab, modelo: model}} = produto
+
+        </script>
+    </head>
+</html>
