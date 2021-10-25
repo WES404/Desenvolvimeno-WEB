@@ -1,12 +1,12 @@
 class Despesas {
 
     constructor(ano, mes, dia, tipo, descricao, valor){
-        this.ano
-        this.mes
-        this.dia
-        this.tipo
-        this.descricao
-        this.valor
+        this.ano = ano
+        this.mes = mes
+        this.dia = dia
+        this.tipo = tipo
+        this.descricao = descricao
+        this.valor = valor
     }
 
     validarDados() {
@@ -19,7 +19,6 @@ class Despesas {
         }
         return true
     }
-
 }
 
 class Bd {
@@ -41,11 +40,11 @@ class Bd {
     }
 
     gravar(d) {
-        // Gravando o item no local Storege
-        // Precisa passar o item como JSON
-
+        // Gravando o item no local Storage
+        
         let id = this.getProximoId()
 
+        // Precisa passar o item como JSON
         localStorage.setItem(id, JSON.stringify(d))
 
         // Atualiza o numero de ids
@@ -92,7 +91,7 @@ function cadastrarDespesa() {
         dia.value, 
         tipo.value, 
         descricao.value, 
-        valor.value
+        valor.value,
     )
 
     if(despesa.validarDados()) {
@@ -101,23 +100,23 @@ function cadastrarDespesa() {
         bd.gravar(despesa)
 
         // Mudando a exibição do Modal
-        document.getElementById("modal_titulo").innerHTML = "Cadastrado"
-        document.getElementById("tipo_modal").className = "modal header text-succes"
-        document.getElementsByClassName("modal-body").innerHTML = "Registro cadastrado com Sucesso"
-        document.getElementsById("button_tipo").innerHTML = "Voltar"
-        document.getElementsById("button_tipo").className = "btn btn-succes"
+        document.getElementById("modal-title").innerHTML = "Cadastrado"
+        document.getElementById("tipo_modal").className = "modal header text-success"
+        document.getElementById("modal-body").innerHTML = "Registro cadastrado com Sucesso"
+        document.getElementById("button_tipo").innerHTML = "Voltar"
+        document.getElementById("button_tipo").className = "btn btn-success"
 
         // Exibindo o Modal
         $('#modalRegistroDespesa').modal("show")
 
     } else {
-
+        
         // Mudando a exibição do Modal
-        document.getElementById("modal_titulo").innerHTML = "Não cadastrado"
+        document.getElementById("modal-title").innerHTML = "Não cadastrado"
         document.getElementById("tipo_modal").className = "modal header text-danger"
-        document.getElementsByClassName("modal-body").innerHTML = "Registro não cadastro por error nos dados"
-        document.getElementsById("button_tipo").innerHTML = "Voltar e Corrigir"
-        document.getElementsById("button_tipo").className = "btn btn-danger"
+        document.getElementById("modal-body").innerHTML = "Registro não cadastro por error nos dados"
+        document.getElementById("button_tipo").innerHTML = "Voltar e Corrigir"
+        document.getElementById("button_tipo").className = "btn btn-danger"
 
         // Exibindo o Modal
         $('#modalRegistroDespesa').modal("show")
