@@ -58,16 +58,17 @@ class Bd {
         let id = localStorage.getItem("id")
 
         // Recupera todas as despesas no localstorage
-        for(let i = 1; i == id; i++){
+        for(let i = 1; i <= id; i++){
 
             let despesa = JSON.parse(localStorage.getItem(i))
 
-            if (despesa != null) { 
-                // se o registro for null não add
-                despesas.push(despesa)
+            if (despesa === null) { 
+                // se o registro for null pula
+                continue
             }
+            despesas.push(despesa)
         }
-
+        
         return despesas
     }
 }
@@ -100,7 +101,7 @@ function cadastrarDespesa() {
         bd.gravar(despesa)
 
         // Mudando a exibição do Modal
-        document.getElementById("modal-title").innerHTML = "Cadastrado"
+        document.getElementById("modal-titulo").innerHTML = "Cadastrado"
         document.getElementById("tipo_modal").className = "modal header text-success"
         document.getElementById("modal-body").innerHTML = "Registro cadastrado com Sucesso"
         document.getElementById("button_tipo").innerHTML = "Voltar"
@@ -109,10 +110,17 @@ function cadastrarDespesa() {
         // Exibindo o Modal
         $('#modalRegistroDespesa').modal("show")
 
+        ano.value = ""
+        mes.value = "" 
+        dia.value = ""
+        tipo.value = ""
+        descricao.value = "" 
+        valor.value = ""
+
     } else {
         
         // Mudando a exibição do Modal
-        document.getElementById("modal-title").innerHTML = "Não cadastrado"
+        document.getElementById("modal-titulo").innerHTML = "Não cadastrado"
         document.getElementById("tipo_modal").className = "modal header text-danger"
         document.getElementById("modal-body").innerHTML = "Registro não cadastro por error nos dados"
         document.getElementById("button_tipo").innerHTML = "Voltar e Corrigir"
@@ -129,7 +137,7 @@ function carregaListaDespesa() {
     let despesas = bd.recuperarRegistros()
 
     // elemento tbody
-    let listaDespesa = document.getElementsById("lista_despesa")
+    let listaDespesa = document.getElementById("lista_despesa")
 
     despesas.forEach(function(d) {
         
@@ -139,8 +147,9 @@ function carregaListaDespesa() {
         // th
         linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
 
-        // Mudando o valor do tipo
+        // Mudando o valor do "tipo"
         switch(d.tipo) {
+
             case "1":
                 d.tipo = "Alimentação"
                 break
