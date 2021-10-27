@@ -52,7 +52,8 @@ class Bd {
     }
 
     recuperarRegistros() {
-
+        
+        //Consulta
         let despesas = []
 
         let id = localStorage.getItem("id")
@@ -70,6 +71,39 @@ class Bd {
         }
         
         return despesas
+    }
+
+    pesquisar(despesa) {
+        //Consulta
+
+        let filtradas = []
+        filtradas = this.recuperarRegistros()
+
+        if(despesa.anos !== ""){
+            filtradas = filtradas.filter(d => d.ano == despesa.ano)
+        }
+
+        if(despesa.mes !== ""){
+            filtradas = filtradas.filter(d => d.mes == despesa.mes)
+        }
+
+        if(despesa.dia !== ""){
+            filtradas = filtradas.filter(d => d.dia == despesa.dia)
+        }
+
+        if(despesa.descricao !== ""){
+            filtradas = filtradas.filter(d => d.descricao == despesa.descricao)
+        }
+
+        if(despesa.tipo !== ""){
+            filtradas = filtradas.filter(d => d.tipo == despesa.tipo)
+        }
+
+        if(despesa.valor !== ""){
+            filtradas = filtradas.filter(d => d.valor == despesa.valor)
+        }
+
+        return filtradas
     }
 }
 
@@ -132,12 +166,18 @@ function cadastrarDespesa() {
     
 }
 
-function carregaListaDespesa() {
+function carregaListaDespesa(despesas = [], filtro = false) {
 
-    let despesas = bd.recuperarRegistros()
+    //Função tbm usada para consultar com filtros em pesquisarDespesa()
+
+    if (despesas.length == 0 && filtro == false) {
+        despesas = bd.recuperarRegistros()
+    }
 
     // elemento tbody
-    let listaDespesa = document.getElementById("lista_despesa")
+    let listaDespesa = document.getElementById("lista_despesa") 
+
+    listaDespesa.innerHTML = ""
 
     despesas.forEach(function(d) {
         
@@ -175,4 +215,21 @@ function carregaListaDespesa() {
         linha.insertCell(2).innerHTML = d.descricao
         linha.insertCell(3).innerHTML = d.valor
     })
+}
+
+function pesquisarDespesa() {
+    
+    let ano = document.getElementById("ano").value
+    let mes = document.getElementById("mes").value
+    let dia = document.getElementById("dia").value
+    let valor = document.getElementById("valor").value
+    let descricao = document.getElementById("descricao").value
+    let tipo = document.getElementById("tipo").value
+
+    let despesa = new Despesas(ano, mes, dia, tipo, descricao, valor)
+
+    let filtradas = bd.pesquisar(despesa)
+
+    carregaListaDespesa(filtradas, true)
+
 }
